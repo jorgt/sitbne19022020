@@ -8,7 +8,7 @@ This package uses node, the easiest way to get going is to clone this repository
 
 `npm install && npm run start`
 
-Saving a file re-runs the script automatically. 
+Saving a file re-runs the script automatically. I left it the way it was presented, so it's ready for you to play with. 
 
 ## Train of thought
 
