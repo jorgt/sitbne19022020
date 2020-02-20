@@ -154,7 +154,7 @@ function fileExample() {
     .map(splitLineAtComma)
     .filter(filterEmptyLine)
     .map(convertDollarToFloat)
-    .reduce(totalValuePerProduct, {})
+    .reduce(totalValuePerProduct, {}) // array manipulation stops here, since it's now an object
 
 
   console.log(myFile);  
