@@ -68,12 +68,15 @@ const myResult = myArray
  * REDUCE is probably the most powerful array function there is, since it can do most things the other functions 
  * can do. Use it somewhat sparingly, because you'll end up with spagethi again. 
  * 
- * It's coolest feature is that it can be used to turn an array into a different data type
+ * Its coolest feature is that it can be used to turn an array into a different data type
  * 
- * REDUCE has two parameters. The first is function with an ACCUMULATOR, and the CURRENT ELEMENT the function is assessing
+ * REDUCE has *two* parameters as opposed to most of the others, which only take a function.
+ * The first input is function with an ACCUMULATOR, and the CURRENT ELEMENT the function is assessing
  * as input. 
  * REDUCE takes a second parameter, which is the initial value you're assigning to the accumulator. This can be any
  * datatype, so it could be a number, a string, an object, etc. 
+ * 
+ * There's an element of recursion involved in REDUCE that makes it harder to grasp
  */
 
  /**
