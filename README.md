@@ -2,7 +2,7 @@
 
 ## To run 
 
-All functions demonstrated at SITBNE are are commented. Please see the files in the 'examples' folder. All actual function calls are commented out, uncomment to run the desired function. 
+All functions demonstrated at SITBNE are commented and should not need a lot of additional explanation. Please see the files in the 'examples' folder. All actual function calls are commented out, uncomment to run the desired function. 
 
 This package uses node, the easiest way to get going is to clone this repository and run:
 
