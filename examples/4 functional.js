@@ -115,7 +115,13 @@ const myObject = myArray
 
 /**
  * These concepts become more powerfull when applied to real world data, which very often
- * consists of arrays with objects in them. 
+ * consists of arrays with objects in them. Functional style programming makes manipulating
+ * a dataset
+ * - quicker to write
+ * - easier to understand
+ * - easier to trouble shoot
+ * - easier to test
+ * - harder to mess up
  * 
  * Consider the following example:
  */
