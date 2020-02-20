@@ -77,7 +77,7 @@ const myResult = myArray
  * datatype, so it could be a number, a string, an object, etc. 
  * 
  * There's an element of recursion involved in REDUCE that makes it harder to grasp, but they also mean that no
- * variables were necessary in creating out of the direct scope of the reducer
+ * variables were necessary out of the direct scope of the reducer
  */
 
  /**
