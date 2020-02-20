@@ -31,6 +31,14 @@ function showThis() {
 //new showThis()
 
 
+const foo = {
+  bar: function() {
+    console.log(this, '\n')
+  }
+}
+
+//foo.bar() // here, the closest scope to running foo.bar is foo
+
 /**
  * Things get more confusing once you execute a method out of it's defined scope. This is best demonstrated in a callback. 
  * In the object below, foo.bar is no longer bound to bar, because it runs in the context of quux
@@ -60,7 +68,7 @@ function callApply() {
 
 /**
  * 'bind' doens't actually execute the functions, as opposed to 'call' and 'apply'. 
- * It is therefore used more commonly used in callbacks
+ * It is therefore more commonly used in callbacks, since it binds at define time
  */
 function bind() {
   quux(foo.bar) // foo.bar is not executed directly, and it still logs 'global'

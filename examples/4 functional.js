@@ -137,7 +137,7 @@ const convertDollarToFloat = line => {
 const totalValuePerProduct = (productList, line) => {
   const [product, value] = line; // Bonus! Did you notice? Array deconstruction
 
-  productList[product] = productList[product] || 0;   //A common way of defaulting a variable
+  productList[product] = productList[product] || 0;   //Logical OR, a common way of defaulting a variable
   productList[product] += value;
 
   return productList
