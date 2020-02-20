@@ -12,8 +12,9 @@ const fs = require('fs');
  * A demonstration using FILTER, MAP and REDUCE
  * 
  * MAP is an array function that can be used to manipulate the current elements in the array. 
- * It takes as argument the current array element, applies the function to every element 
- * and creates a new array as the result
+ * It takes as argument a function with parameter: the current array element. It will apply
+ * the function to every element in the array, create a new array as the result and return it, 
+ * leaving the original array untouched
  *
  * Fat arrows second useful characteristic is the implicit return. When ommiting the brackets, the fat arrow function
  * will return whatever your statement returns without you explicitly mentioning the return.
@@ -21,8 +22,8 @@ const fs = require('fs');
 
 
 const myArray = [1, 2, 3, 4]; // the array we're using
-const doubleIt = value => value * 2 // the function we're applying to each array element
-const doubleArray = myArray.map(doubleIt); // the new array
+const doubleIt = value => value * 2 // implicit return! This is the function we're applying to each array element
+const doubleArray = myArray.map(doubleIt); // map returns a new array
 
 // console.log(doubleIt(3))
 // console.log(myArray) //input is unchanged!
@@ -33,13 +34,13 @@ const doubleArray = myArray.map(doubleIt); // the new array
  * These are equivalent, but the implicit return makes for a very readable line
  */
 
-const doubleItOnce = [1, 2, 3, 4].map(value => value * 2);
+const doubleItOnce = myArray.map(value => value * 2);
 
-const doubleItAgain = [1, 2, 3, 4].map(value => {
+const doubleItAgain = myArray.map(value => {
   return value * 2;
 });
 
-const doubleItOnceMore = [1, 2, 3, 4].map(function (value) {
+const doubleItOnceMore = myArray.map(function (value) {
   return value * 2;
 });
 
@@ -56,7 +57,7 @@ const doubleItOnceMore = [1, 2, 3, 4].map(function (value) {
 
 const myResult = myArray
   .map(value => value * 2)
-  .filter(value => value > 5)
+  .filter(value => value > 5) // if it's larger than 5, we're keeping it
 
 //console.log(myResult)
 
@@ -69,8 +70,10 @@ const myResult = myArray
  * 
  * It's coolest feature is that it can be used to turn an array into a different data type
  * 
- * it takes a function with an ACCUMULATOR, and the CURRENT ELEMENT the function is assessing as parameters. 
- * REDUCE takes a second parameter, which is the object we'll be kicking the accumulator off with. 
+ * REDUCE has two parameters. The first is function with an ACCUMULATOR, and the CURRENT ELEMENT the function is assessing
+ * as input. 
+ * REDUCE takes a second parameter, which is the initial value you're assigning to the accumulator. This can be any
+ * datatype, so it could be a number, a string, an object, etc. 
  */
 
  /**
@@ -93,7 +96,7 @@ const mySum = myArray
   * This is a way to turn an array into an object
   */
 const objFunction = (newObj, currentValue) => {
-  newObj[`MyVal${currentValue}`] = currentValue;
+  newObj[`MyVal${currentValue}`] = currentValue; //bonus! template literal
   return newObj
 }
 
@@ -120,12 +123,13 @@ const splitLineAtComma = line => line.split(',');
 const filterEmptyLine = line => line.length === 2;
 const convertDollarToFloat = line => {
   line[1] = parseFloat(line[1].replace('$', ''))  // this is an assignment, not an operator! 
-                                                  // therefore, no explicit return!
+                                                  // therefore, the implicit return would be
+                                                  // undefined! so, we'll do an explicit return!
   return line;
 };
 
 const totalValuePerProduct = (productList, line) => {
-  const [product, value] = line; // Did you notice? Array deconstructing!
+  const [product, value] = line; // Bonus! Did you notice? Array deconstruction
 
   productList[product] = productList[product] || 0;   //A common way of defaulting a variable
   productList[product] += value;

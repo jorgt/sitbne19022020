@@ -1,6 +1,13 @@
 /**
- * This function demonstrates what the 'global' variable is, and that it's the 
- * Node version of the Window object
+ * When a function executes, three things happen to determine what 'this' means.
+ * - a stack of scopes is determined
+ * - the closest scopes to the runtime of the function are set as the current context
+ * - the context is assigned to 'this'. 
+ * 
+ * To demonstrate
+ * 
+ * First, a quick function demonstrating what the 'global' variable is, and that it's the 
+ * Node version of the Window object (more or less)
  */
 function showGlobal() {
   console.log(global, '\n')
@@ -45,8 +52,8 @@ function quux(callback) {
 function callApply() {
   foo.bar() // this logs 'foo' as the value of 'this'
   foo.bar.apply() //we're not setting a context in 'apply' here, so 'this' is global
-  foo.bar.apply(foo) // explicitely setting global
-  foo.bar.apply(fizz) //now, the value of 'this' actually refers to the object called 'fuz'!   
+  foo.bar.apply(foo) // explicitely setting foo
+  foo.bar.apply(fizz) //now, the value of 'this' actually refers to the object called 'fizz'!   
 }
 
 //callApply();
