@@ -13,9 +13,11 @@ Saving a file re-runs the script automatically. I left it the way it was present
 ## Train of thought
 
 - UI5 cannot innovate as much as other frameworks because it needs to remain fully backwards compatible
-- Design desicions such as the custom module system vs something like webpack or jsm 
+- Design desicions such as the custom module system vs something like webpack or jsm make it harder to 
+integrate with other build tools
 - WebIDE uses strict linting rules. It'll prevent deployment and enforces style, but it also 
-prevents the use of ES6+ features
+prevents the use of ES6+ features. There are ways around it but they involve a deeper understanding of build tools
+to begin with
 - Many topics to choose from!
   - Webpack/Babel/ESLint: Modern dev pipeline for increased understanding of the build tools and WebIDE
   - Fat arrow functions
