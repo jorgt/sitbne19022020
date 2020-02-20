@@ -1,7 +1,8 @@
 /**
  * When a function executes, three things happen to determine what 'this' means.
- * - a stack of scopes is determined
- * - the closest scopes to the runtime of the function are set as the current context
+ * - a stack of scopes is determined, as seen in example 1
+ * - the closest set of scopes to the function *determined at run time* are set as the current context
+ *   which affects the variables and environments available to your function
  * - the context is assigned to 'this'. 
  * 
  * To demonstrate
